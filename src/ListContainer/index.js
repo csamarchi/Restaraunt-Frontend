@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
 
-class ListContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
+const ListContainer = (props) => {
+  const restaraunts = props.restaurants.map((restaurant, i) => {
+    return (
+      <li key={restaurants._id}>
+        <h5>{restaurants.name}</h5>
 
-    }
-  }
-  render() {
-    return(
-
+      </li>
     )
-  }
+  })
+  return(
+    <ul>
+    {restaurants}
+    </ul>
+  )
 }
+
+
 
 export default ListContainer;
