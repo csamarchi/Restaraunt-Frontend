@@ -9,19 +9,20 @@ import React, {Component} from 'react';
       return (
         <div key={restaurant._id}>
           <h5>{restaurant.restaurant.name}</h5>
-          <h5>{restaurant.restaurant.featured_image}</h5>
+            <img src={restaurant.restaurant.featured_image} width='300px' height='250px'/>
         </div>
       )
-    })
-    return(
-      <div>
-      <h3>Restaurant List</h3>
-      <ul>
-      {restarauntList}
-      </ul>
-      </div>
-    )
-  }
+
+  })
+  return(
+    <div>
+    <h3>Restaurant List</h3>
+    <ul>
+    {restarauntList}
+    </ul>
+    </div>
+  )
+}
 
 
 

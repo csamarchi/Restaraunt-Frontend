@@ -54,7 +54,7 @@ class RestarauntContainer extends Component {
   render() {
     return(
       <div>
-        <h1> Find your favorite Restaraunt </h1>
+        <h1> Find your favorite Restaurant </h1>
         <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         <ListContainer restaurants = {this.state.restaurants}/>
       </div>
