@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import RestarauntContainer from './RestarauntContainer';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Profile from './Profile';
 
-class App extends Component {
 
-  render() {
+  const App = () => {
     return (
-      <div className="App">
-        <RestarauntContainer />
+      <div>
           <Switch>
+            <Route exact path="/" component={RestarauntContainer} />
             <Route exact path="/profile" component={Profile} />
           </Switch>
-      </div>
-    );
-  }
+          </div>
+    )
 }
 
 export default App;

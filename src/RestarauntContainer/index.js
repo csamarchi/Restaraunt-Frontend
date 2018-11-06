@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import SearchBar from '../SearchBar';
 import ListContainer from '../ListContainer';
+import { Link }from 'react-router-dom';
+
 
 class RestarauntContainer extends Component {
   constructor() {
@@ -70,7 +72,7 @@ class RestarauntContainer extends Component {
     return(
       <div>
         <h1> Find your favorite Restaurant </h1>
-        <a href="/profile"> Profile </a>
+        <Link to ="/profile"> Profile </Link>
         <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         <ListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
       </div>
