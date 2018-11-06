@@ -11,7 +11,7 @@ class SearchBar extends Component {
 
   handleSubmit = (e) => {
    e.preventDefault();
-   this.props.getRestaraunts(this.state.searchQuery);
+   this.props.getRestarauntsWithQuery(this.state.searchQuery);
  }
 
  handleChange = (e) => {

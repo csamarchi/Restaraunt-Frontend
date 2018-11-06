@@ -23,14 +23,23 @@ class RestarauntContainer extends Component {
             }
           });
     const restarauntsParsedJSON = await restaraunts.json();
-    console.log(restarauntsParsedJSON);
-    return restarauntsParsedJSON
+    return restarauntsParsedJSON;
+  }
+
+  getRestarauntsWithQuery = (searchQuery) => {
+    this.getRestaraunts(searchQuery).then((restaraunts) => {
+      console.log(restaraunts);
+      console.log(restaraunts.restaurants[0].restaurant.name);
+      this.setState({restaraunts: restaraunts.restaurants})
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
   componentDidMount(){
   // get ALl the restaraunts, on the intial load of the APP
   this.getRestaraunts().then((restaraunts) => {
-    this.setState({restaraunts: restaraunts.data})
+    this.setState({restaraunts: restaraunts.restaurants})
   }).catch((err) => {
     console.log(err);
   })
@@ -43,8 +52,8 @@ class RestarauntContainer extends Component {
   render() {
     return(
       <div>
-        <h1> restaraunt container </h1>
-        <SearchBar getRestaraunts = {this.getRestaraunts} />
+        <h1> Find your favorite Restaraunt </h1>
+        <SearchBar getRestarauntsWithQuery = {this.getRestarauntsWithQuery} />
       </div>
     )
   }
