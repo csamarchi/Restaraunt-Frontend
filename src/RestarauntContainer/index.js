@@ -47,7 +47,23 @@ class RestarauntContainer extends Component {
   /// Where you call this.getRestaurants
 }
 
-
+  addRestaurant = async (restaurant, e) => {
+    e.preventDefault();
+    console.log(restaurant);
+    try {
+      const addedRestaurant = await fetch('http://localhost:9000/api/v1/restaraunt', {
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(restaurant),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    } catch(err){
+      console.log('error')
+      console.log(err)
+    }
+  }
 
 
   render() {
@@ -55,7 +71,7 @@ class RestarauntContainer extends Component {
       <div>
         <h1> Find your favorite Restaurant </h1>
         <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
-        <ListContainer restaurants = {this.state.restaurants}/>
+        <ListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
       </div>
     )
   }
