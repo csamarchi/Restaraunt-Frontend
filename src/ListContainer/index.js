@@ -9,7 +9,9 @@ import React, {Component} from 'react';
       return (
         <div key={restaurant._id}>
           <h5>{restaurant.restaurant.name}</h5>
-            <img src={restaurant.restaurant.featured_image} width='300px' height='250px'/>
+            <img src={restaurant.restaurant.featured_image} width='400px' height='250px'/>
+            <br/>
+            <button>Add </button>
         </div>
       )
 

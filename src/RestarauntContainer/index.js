@@ -32,7 +32,6 @@ class RestarauntContainer extends Component {
       console.log(restaurants);
       console.log(restaurants.restaurants[0].restaurant.name);
       this.setState({restaurants: restaurants.restaurants})
-      console.log(this.state.restaurants, 'MIRZA');
     }).catch((err) => {
       console.log(err);
     })
