@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import RestarauntContainer from '../RestarauntContainer'
 
 class SearchBar extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class SearchBar extends Component {
 
   handleSubmit = (e) => {
    e.preventDefault();
-   this.props.getRestarauntsWithQuery(this.state.searchQuery);
+   this.props.getRestaurantsWithQuery(this.state.searchQuery);
  }
 
  handleChange = (e) => {

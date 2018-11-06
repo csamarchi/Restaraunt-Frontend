@@ -40,7 +40,7 @@ class RestarauntContainer extends Component {
 
   componentDidMount(){
   // get ALl the Restaurants, on the intial load of the APP
-  this.getRestaurants().then((Restaurants) => {
+  this.getRestaurants().then((restaurants) => {
     this.setState({restaurants: restaurants.restaurants})
   }).catch((err) => {
     console.log(err);
