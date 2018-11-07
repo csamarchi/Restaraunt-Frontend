@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link }from 'react-router-dom';
 import ProfileListContainer from '../ProfileListContainer';
+import { Header } from 'semantic-ui-react'
 
 
 class Profile extends Component {
@@ -36,8 +37,14 @@ class Profile extends Component {
   render() {
     return (
       <div>
+      <Header className='nav'>
+        <Link to ="/" className="link"> Home </Link>
+        <Link to ="" className="link"> Register </Link>
+        <Link to ="" className="link"> Login </Link>
+        <Link to ="" className="link"> Logout </Link>
+        <Link to ="/profile" className="link"> Profile </Link>
+      </Header>
         <h1> Your favorite Restaurant </h1>
-        <Link to ="/"> Back </Link>
         <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
       </div>
     )

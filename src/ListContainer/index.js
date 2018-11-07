@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
-import { Button, Icon, Label } from 'semantic-ui-react'
+import { Button, Icon, Label } from 'semantic-ui-react';
+import DetailCard from '../DetailCard';
 
 
 
   const ListContainer = (props) => {
     const restarauntList = props.restaurants.map((restaurant, i) => {
       console.log(restaurant.restaurant.name);
-
+      console.log(props, restaurant, restaurant.restaurant.id, ' hello');
       return (
-        <div className='restaurantList'>
-          <div key={restaurant._id}>
-            <h5>{restaurant.restaurant.name}</h5>
-              <img src={restaurant.restaurant.featured_image} width='400px' height='250px'/>
+          <div className='restaurantList' key={restaurant.restaurant.id}>
+            <h5 onClick={props.openModal.bind(null, restaurant.restaurant)}>{restaurant.restaurant.name}</h5>
+            <button className='addButton' onClick={props.addRestaurant.bind(null, restaurant.restaurant)}>Add </button>
+              <img src={restaurant.restaurant.featured_image} width='400px' height='250px' />
               <br/>
-              <Button onClick={props.addRestaurant.bind(null, restaurant.restaurant)}>Add </Button>
           </div>
-        </div>
       )
   })
 

@@ -4,6 +4,7 @@ import RestarauntContainer from './RestarauntContainer';
 import { Route, Link, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import Profile from './Profile';
+import Welcome from './Welcome';
 
 
   const App = () => {
@@ -12,6 +13,7 @@ import Profile from './Profile';
           <Switch>
             <Route exact path="/" component={RestarauntContainer} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/welcome" component={Welcome} />
           </Switch>
           </div>
     )

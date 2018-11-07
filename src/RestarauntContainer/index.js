@@ -3,7 +3,7 @@ import SearchBar from '../SearchBar';
 import ListContainer from '../ListContainer';
 import { Link }from 'react-router-dom';
 import { Header } from 'semantic-ui-react'
-
+import DetailCard from '../DetailCard';
 
 
 
@@ -12,12 +12,18 @@ class RestarauntContainer extends Component {
     super();
 
     this.state = {
-      restaurants: []
+      restaurants: [],
+      restaurantModal: {
+        name: '',
+        featured_image: '',
+        currency: '',
+        cuisine: '',
+        address: '',
+        url: ''
+      },
+        showModal: false
     }
   }
-
-//GET --header "Accept: application/json" --header "user-key: 95f432cefc027eaa7c0c7881e0edd2e7"
-//https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&q=italian
 
   getRestaurants = async (searchQuery) => {
     // Where We will make our fetch call to get all the Restaurants
@@ -70,20 +76,45 @@ class RestarauntContainer extends Component {
     }
   }
 
+openModal = (restaurantFromTheList) => {
+  console.log(restaurantFromTheList, 'this is from the list');
+  this.setState({
+    showModal: true,
+    restaurantModal: {
+      ...restaurantFromTheList
+    }
+  })
+}
+
+closeModal = (restaurantFromTheList) => {
+  console.log(restaurantFromTheList, 'this is from the list');
+  this.setState({
+    showModal: false,
+    restaurantModal: {
+      ...restaurantFromTheList
+    }
+  })
+}
+
+
 
   render() {
+    console.log(this.state, ' this is state');
     return(
-      <div>
-        <Header className='nav'>
-          <Link to =""> Home </Link>
-          <Link to =""> Register </Link>
-          <Link to =""> Login </Link>
-          <Link to =""> Logout </Link>
-          <Link to ="/profile"> Profile </Link>
-        </Header>
-        <h1> Find your favorite Restaurant </h1>
-        <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
-        <ListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
+     <div>
+        <div className="homeDiv">
+          <Header className='nav'>
+            <Link to ="" className="link"> Home </Link>
+            <Link to ="" className="link"> Register </Link>
+            <Link to ="" className="link"> Login </Link>
+            <Link to ="" className="link"> Logout </Link>
+            <Link to ="/profile" className="link"> Profile </Link>
+          </Header>
+            <h1> Find your favorite Restaurant </h1>
+            <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
+        </div>
+            <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
+            <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} />
       </div>
     )
   }

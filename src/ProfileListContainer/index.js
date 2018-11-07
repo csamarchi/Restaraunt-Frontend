@@ -18,8 +18,7 @@ import { Button, Icon, Label } from 'semantic-ui-react'
 
     return(
       <div>
-      <h3>Restaurant List</h3>
-      <ul>
+      <ul className='profileList'>
       {profileList}
       </ul>
       </div>
