@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Button, Icon, Label } from 'semantic-ui-react'
+
 
 
   const ProfileListContainer = (props) => {

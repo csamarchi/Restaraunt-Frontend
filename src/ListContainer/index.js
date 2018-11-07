@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Button, Icon, Label } from 'semantic-ui-react'
+
 
 
   const ListContainer = (props) => {
@@ -6,18 +8,19 @@ import React, {Component} from 'react';
       console.log(restaurant.restaurant.name);
 
       return (
-        <div key={restaurant._id}>
-          <h5>{restaurant.restaurant.name}</h5>
-            <img src={restaurant.restaurant.featured_image} width='400px' height='250px'/>
-            <br/>
-            <button onClick={props.addRestaurant.bind(null, restaurant.restaurant)}>Add </button>
+        <div className='restaurantList'>
+          <div key={restaurant._id}>
+            <h5>{restaurant.restaurant.name}</h5>
+              <img src={restaurant.restaurant.featured_image} width='400px' height='250px'/>
+              <br/>
+              <Button onClick={props.addRestaurant.bind(null, restaurant.restaurant)}>Add </Button>
+          </div>
         </div>
       )
   })
 
     return(
       <div>
-      <h3>Restaurant List</h3>
       <ul>
       {restarauntList}
       </ul>

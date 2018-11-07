@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import SearchBar from '../SearchBar';
 import ListContainer from '../ListContainer';
 import { Link }from 'react-router-dom';
+import { Header } from 'semantic-ui-react'
+
+
 
 
 class RestarauntContainer extends Component {
@@ -71,8 +74,14 @@ class RestarauntContainer extends Component {
   render() {
     return(
       <div>
+        <Header className='nav'>
+          <Link to =""> Home </Link>
+          <Link to =""> Register </Link>
+          <Link to =""> Login </Link>
+          <Link to =""> Logout </Link>
+          <Link to ="/profile"> Profile </Link>
+        </Header>
         <h1> Find your favorite Restaurant </h1>
-        <Link to ="/profile"> Profile </Link>
         <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         <ListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
       </div>
