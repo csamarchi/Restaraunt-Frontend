@@ -4,7 +4,7 @@ import ListContainer from '../ListContainer';
 import { Link }from 'react-router-dom';
 import { Header } from 'semantic-ui-react'
 import DetailCard from '../DetailCard';
-
+import ProfileListContainer from '../ProfileListContainer';
 
 
 class RestarauntContainer extends Component {
@@ -104,7 +104,7 @@ closeModal = (restaurantFromTheList) => {
      <div>
         <div className="homeDiv">
           <Header className='nav'>
-            <Link to ="" className="link"> Home </Link>
+            <Link to ="/welcome" className="link"> Home </Link>
             <Link to ="" className="link"> Register </Link>
             <Link to ="" className="link"> Login </Link>
             <Link to ="" className="link"> Logout </Link>
@@ -113,8 +113,9 @@ closeModal = (restaurantFromTheList) => {
             <h1> Find your favorite Restaurant </h1>
             <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         </div>
-            <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
-            <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} />
+            <div className="homeBottomDiv" />
+              <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
+              <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} />
       </div>
     )
   }
