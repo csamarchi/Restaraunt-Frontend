@@ -13,7 +13,6 @@ import React, {Component} from 'react';
             <button onClick={props.addRestaurant.bind(null, restaurant.restaurant)}>Add </button>
         </div>
       )
-
   })
 
     return(
