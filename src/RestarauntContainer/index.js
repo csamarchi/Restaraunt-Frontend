@@ -105,9 +105,9 @@ closeModal = (restaurantFromTheList) => {
         <div className="homeDiv">
           <Header className='nav'>
             <Link to ="/welcome" className="link"> Home </Link>
-            <Link to ="" className="link"> Register </Link>
+            <Link to ="/register" className="link"> Register </Link>
             <Link to ="/login" className="link"> Login </Link>
-            <Link to ="" className="link"> Logout </Link>
+            <Link to ="/logout" className="link"> Logout </Link>
             <Link to ="/profile" className="link"> Profile </Link>
           </Header>
             <h1> Find your favorite Restaurant </h1>

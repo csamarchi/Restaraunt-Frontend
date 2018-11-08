@@ -36,24 +36,18 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="profileDiv">
       <Header className='nav'>
         <Link to ="/" className="link"> Home </Link>
-        <Link to ="" className="link"> Register </Link>
-        <Link to ="" className="link"> Login </Link>
-        <Link to ="" className="link"> Logout </Link>
+        <Link to ="/register" className="link"> Register </Link>
+        <Link to ="/login" className="link"> Login </Link>
+        <Link to ="/logout" className="link"> Logout </Link>
         <Link to ="/profile" className="link"> Profile </Link>
       </Header>
       <div className='h1'>
-        <h1> Your favorite Restaurant </h1>
+        <h1> Your favorite Restaurants </h1>
       </div>
-        <Grid columns={2} divided textAlign='center' style={{ height: '100%' }} verticalAlign='top' stackable>
-          <Grid.Row>
-            <Grid.Column>
-              <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+          <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
       </div>
     )
   }

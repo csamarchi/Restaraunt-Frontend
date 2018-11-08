@@ -18,6 +18,15 @@ code {
   height: 700px;
 }
 
+.logout {
+  background-image: url("logout.jpg");
+  height: 820px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
 .link {
   position: relative;
   margin: 60px;
@@ -40,14 +49,20 @@ code {
   background-image: url("canvas.png");
 }
 
+.profileDiv {
+  background-color: #b3caef;
+  background-size: cover;
+  height: 1700px;
+}
+
 .homeBottomDiv {
   background-color: #79a0e0;
   opacity: 0.7;
-  height: 8000px;
+  height: 2500px;
   position: relative;
 }
 
-h1 {
+h1, h3 {
   text-align: center;
   font-size: 2em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -59,6 +74,46 @@ h1 {
  top: 55%;
  left: 50%;
  transform: translate(-50%, -50%);
+}
+
+.username {
+  width: 30%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.password {
+  width: 30%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.registerButton {
+  width: 30%;
+  position: absolute;
+  background-color: #79a0e0;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoutButton {
+  width: 30%;
+  position: absolute;
+  background-color: #79a0e0;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoutButton:hover, .registerButton:hover, .searchButton:hover, .addButton:hover {
+  background-color: #4d7fd1;
+  cursor: pointer;
 }
 
 input {
@@ -94,8 +149,8 @@ input {
   position: relative;
   width: 100px;
   height: 28px;
-  top: -7px;
-  right: -98px;
+  top: -1px;
+  right: -176px;
 }
 
 ul {
@@ -106,10 +161,17 @@ ul {
   padding-top: 0px;
 }
 
+
 .profileList {
   position: absolute;
-  left: 10%;
-  top: 30%;
+  left: 2%;
+  top: 20%;
+}
+
+.homeList {
+  position: absolute;
+  left: 2%;
+  top: 50%;
 }
 
 h5 {

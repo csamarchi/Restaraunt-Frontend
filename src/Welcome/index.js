@@ -16,9 +16,9 @@ class Welcome extends Component {
       <div className='welcome'>
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
-          <Link to ="" className="link"> Register </Link>
+          <Link to ="/register" className="link"> Register </Link>
           <Link to ="/login" className="link"> Login </Link>
-          <Link to ="" className="link"> Logout </Link>
+          <Link to ="logout" className="link"> Logout </Link>
           <Link to ="/profile" className="link"> Profile </Link>
         </Header>
         <h1 style={welcomeStyle}> Welcome! </h1>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Icon, Label, Grid } from 'semantic-ui-react'
+import { Card, Image, Button, Icon, Label, Grid } from 'semantic-ui-react'
 
 
 
@@ -8,19 +8,20 @@ import { Button, Icon, Label, Grid } from 'semantic-ui-react'
       console.log(restaurant.name);
 
       return (
-        <div key={restaurant._id}>
-          <h5>{restaurant.name}</h5>
-            <img src={restaurant.featured_image} width='400px' height='250px'/>
-            <br/>
-        </div>
+            <Card key={restaurant._id}>
+              <Card.Content>
+              <Card.Header>{restaurant.name}</Card.Header>
+                <Image src={restaurant.featured_image} width='250px' height='150px'/>
+              </Card.Content>
+          </Card>
       )
   })
 
     return(
       <div>
-      <ul className='profileList'>
+      <Card.Group className='profileList'>
       {profileList}
-      </ul>
+      </Card.Group>
       </div>
     )
   }
