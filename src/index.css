@@ -15,7 +15,7 @@ code {
 
 .welcome {
   background-image: url("canvas.png");
-  height: 650px;
+  height: 700px;
 }
 
 .link {
@@ -108,11 +108,11 @@ ul {
 
 .profileList {
   position: absolute;
-  left: 30%;
+  left: 10%;
   top: 30%;
 }
 
 h5 {
   text-align: center;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }

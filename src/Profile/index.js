@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link }from 'react-router-dom';
 import ProfileListContainer from '../ProfileListContainer';
-import { Header } from 'semantic-ui-react'
+import { Header, Grid } from 'semantic-ui-react'
 
 
 class Profile extends Component {
@@ -44,8 +44,16 @@ class Profile extends Component {
         <Link to ="" className="link"> Logout </Link>
         <Link to ="/profile" className="link"> Profile </Link>
       </Header>
+      <div className='h1'>
         <h1> Your favorite Restaurant </h1>
-        <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
+      </div>
+        <Grid columns={2} divided textAlign='center' style={{ height: '100%' }} verticalAlign='top' stackable>
+          <Grid.Row>
+            <Grid.Column>
+              <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
       </div>
     )
   }

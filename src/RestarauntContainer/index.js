@@ -5,7 +5,7 @@ import { Link }from 'react-router-dom';
 import { Header } from 'semantic-ui-react'
 import DetailCard from '../DetailCard';
 import ProfileListContainer from '../ProfileListContainer';
-
+import { Grid } from 'semantic-ui-react';
 
 class RestarauntContainer extends Component {
   constructor() {
@@ -106,7 +106,7 @@ closeModal = (restaurantFromTheList) => {
           <Header className='nav'>
             <Link to ="/welcome" className="link"> Home </Link>
             <Link to ="" className="link"> Register </Link>
-            <Link to ="" className="link"> Login </Link>
+            <Link to ="/login" className="link"> Login </Link>
             <Link to ="" className="link"> Logout </Link>
             <Link to ="/profile" className="link"> Profile </Link>
           </Header>
@@ -114,9 +114,9 @@ closeModal = (restaurantFromTheList) => {
             <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         </div>
             <div className="homeBottomDiv" />
-              <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
-              <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} />
-      </div>
+            <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
+            <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} />
+            </div>
     )
   }
 }
