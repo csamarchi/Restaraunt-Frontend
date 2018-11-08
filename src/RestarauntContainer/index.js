@@ -40,8 +40,6 @@ class RestarauntContainer extends Component {
 
   getRestaurantsWithQuery = (searchQuery) => {
     this.getRestaurants(searchQuery).then((restaurants) => {
-      console.log(restaurants);
-      console.log(restaurants.restaurants[0].restaurant.name);
       this.setState({restaurants: restaurants.restaurants})
     }).catch((err) => {
       console.log(err);
@@ -99,6 +97,11 @@ closeModal = (restaurantFromTheList) => {
 
 
   render() {
+    const welcomeStyle = {
+      color: 'black',
+      'font-size': '3em',
+      'font-family': 'Montserrat'
+    }
     console.log(this.state, ' this is state');
     return(
      <div>
@@ -110,12 +113,16 @@ closeModal = (restaurantFromTheList) => {
             <Link to ="/logout" className="link"> Logout </Link>
             <Link to ="/profile" className="link"> Profile </Link>
           </Header>
-            <h1> Find your favorite Restaurant </h1>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          <h1 style={welcomeStyle}> Find your favorite Restaurant </h1>
             <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         </div>
             <div className="homeBottomDiv" />
             <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
-            <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} />
+            <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal}/>
             </div>
     )
   }

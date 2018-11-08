@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
 import { Link }from 'react-router-dom';
-import { Header } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react';
+
 
 class Welcome extends Component {
   constructor() {
     super();
   }
 
+
+
   render() {
     const welcomeStyle = {
-      color: 'white',
-      top: '100%'
+      color: 'black',
+      'font-size': '4em',
+      'font-family': 'Montserrat'
     }
     return (
       <div className='welcome'>
@@ -21,6 +25,10 @@ class Welcome extends Component {
           <Link to ="logout" className="link"> Logout </Link>
           <Link to ="/profile" className="link"> Profile </Link>
         </Header>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <h1 style={welcomeStyle}> Welcome! </h1>
     </div>
     )

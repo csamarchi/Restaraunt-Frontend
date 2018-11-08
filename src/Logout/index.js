@@ -25,6 +25,11 @@ const logoutResponse = await fetch('http://localhost:9000/auth/logout');
      }
     }
   render() {
+    const welcomeStyle = {
+      color: 'black',
+      'font-size': '2em',
+      'font-family': 'Montserrat'
+    }
     console.log(this.props, 'Logout Props?????')
     return(
       <div className="logout">
@@ -35,7 +40,8 @@ const logoutResponse = await fetch('http://localhost:9000/auth/logout');
         <Link to ="" className="link"> Logout </Link>
         <Link to ="/profile" className="link"> Profile </Link>
       </Header>
-        <h2>See you soon!</h2>
+        <br></br>
+        <h2 style={welcomeStyle}>See you soon!</h2>
           <input className="logoutButton" type='Submit' value='Logout' onClick={this.handleClick} />
      </div>
     )

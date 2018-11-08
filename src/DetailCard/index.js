@@ -6,9 +6,9 @@ const DetailCard = (props) => (
   <Modal open={props.showModal} closeIcon onClick={props.closeModal}>
     <Modal.Header>Select a Photo</Modal.Header>
     <Modal.Content image>
-      <Image wrapped size='medium' src= ''/>
+      <Image wrapped size='medium' src= {props.restaurant.featured_image}/>
       <Modal.Description>
-        {props.restaurant}
+        {props.restaurant.cuisines}
       </Modal.Description>
     </Modal.Content>
   </Modal>

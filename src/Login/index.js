@@ -13,7 +13,7 @@ class Login extends Component{
   }
   handleSubmit = async (e) => {
     e.preventDefault();
-const loginResponse = await fetch('http://localhost:9000/auth/login', {
+const loginResponse = await fetch('http://localhost:9000/auth', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(this.state),
@@ -27,9 +27,7 @@ const loginResponse = await fetch('http://localhost:9000/auth/login', {
     if(parsedResponse.data === 'login successful'){
       // this.props.history.push('/profile');
       //Directs to spotify login ,then directs to profile page
-      window.location.assign('http://localhost:9000/spotify/login')
-
-
+      this.props.history.push('/');
     } else if(parsedResponse.data === 'Password incorrect'){
       alert('Password Incorrect')
     } else if(parsedResponse.data === 'Username incorrect'){
@@ -42,15 +40,11 @@ const loginResponse = await fetch('http://localhost:9000/auth/login', {
     this.setState({[e.target.name]:e.target.value});
   }
   render() {
-    console.log('this is props for Login', this.props)
-
-    const style={
-      width: '200px',
-      height: '200px',
-      borderRadius: '50%',
-      marginBottom: '50px',
+    const welcomeStyle = {
+      color: 'black',
+      'font-size': '3em',
+      'font-family': 'Montserrat'
     }
-
     return(
 
       <div className="loginRegister">
@@ -65,16 +59,10 @@ const loginResponse = await fetch('http://localhost:9000/auth/login', {
         <br></br>
         <br></br>
         <br></br>
-
-
-{/* <div className="loginRegisterImage">
-          <img style={style} src="https://images.unsplash.com/photo-1483821838526-8d9756a6e1ed?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f2ee5af66743fa8159bcce66cdc57428&auto=format&fit=crop&w=2768&q=80" />
-</div> */}
-
-<h3>Welcome back!</h3>
-<br></br>
-<br></br>
-<br></br>
+          <h3 style={welcomeStyle}>Welcome back!</h3>
+        <br></br>
+        <br></br>
+        <br></br>
 
       <form onSubmit={this.handleSubmit}>
         <label className="username">
@@ -85,16 +73,15 @@ const loginResponse = await fetch('http://localhost:9000/auth/login', {
           Password:
           <input type='password' name='password' placeholder='password' onChange={this.handleChange}/>
         </label>
-        <input className="registerButton" type='Submit' value='Login'/>
+          <input className="registerButton" type='Submit' value='Login'/>
       </form>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
     </div>
     )
   };

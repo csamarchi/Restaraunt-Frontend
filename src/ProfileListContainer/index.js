@@ -10,7 +10,7 @@ import { Card, Image, Button, Icon, Label, Grid } from 'semantic-ui-react'
       return (
             <Card key={restaurant._id}>
               <Card.Content>
-              <Card.Header>{restaurant.name}</Card.Header>
+              <Card.Header onClick={props.openModal.bind(null, restaurant)}>{restaurant.name}</Card.Header>
                 <Image src={restaurant.featured_image} width='250px' height='150px'/>
               </Card.Content>
           </Card>

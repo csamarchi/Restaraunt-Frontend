@@ -2,13 +2,19 @@ import React, {Component} from 'react';
 import { Link }from 'react-router-dom';
 import ProfileListContainer from '../ProfileListContainer';
 import { Header, Grid } from 'semantic-ui-react'
+import DetailCard from '../DetailCard';
 
 
 class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      restaurants: []
+      restaurants: [],
+      restaurantModal: {
+        name: '',
+        featured_image: ''
+      },
+        showModal: false
     }
   }
 
@@ -34,7 +40,32 @@ class Profile extends Component {
   /// Where you call this.getRestaurants
 }
 
+openModal = (restaurantFromTheList) => {
+  console.log(restaurantFromTheList, 'this is from the list');
+  this.setState({
+    showModal: true,
+    restaurantModal: {
+      ...restaurantFromTheList
+    }
+  })
+}
+
+closeModal = (restaurantFromTheList) => {
+  console.log(restaurantFromTheList, 'this is from the list');
+  this.setState({
+    showModal: false,
+    restaurantModal: {
+      ...restaurantFromTheList
+    }
+  })
+}
+
   render() {
+    const welcomeStyle = {
+      color: 'black',
+      'font-size': '2em',
+      'font-family': 'Montserrat'
+    }
     return (
       <div className="profileDiv">
       <Header className='nav'>
@@ -45,9 +76,10 @@ class Profile extends Component {
         <Link to ="/profile" className="link"> Profile </Link>
       </Header>
       <div className='h1'>
-        <h1> Your favorite Restaurants </h1>
+        <h1 style={welcomeStyle}> Your favorite Restaurants </h1>
       </div>
-          <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} />
+          <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal} />
+          <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal} />
       </div>
     )
   }

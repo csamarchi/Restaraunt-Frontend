@@ -15,7 +15,11 @@ code {
 
 .welcome {
   background-image: url("canvas.png");
-  height: 700px;
+  height: 820px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
 }
 
 .logout {
@@ -47,12 +51,20 @@ code {
   margin-top: 0px;
   height: 500px;
   background-image: url("canvas.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
 }
 
 .profileDiv {
   background-color: #b3caef;
   background-size: cover;
-  height: 1700px;
+  height: 900px;
+}
+
+.nav {
+  text-align: center;
 }
 
 .homeBottomDiv {
@@ -71,7 +83,7 @@ h1, h3 {
 .SearchBar {
  width: 30%;
  position: absolute;
- top: 55%;
+ top: 75%;
  left: 50%;
  transform: translate(-50%, -50%);
 }
@@ -102,7 +114,7 @@ h1, h3 {
 }
 
 .logoutButton {
-  width: 30%;
+  width: 20%;
   position: absolute;
   background-color: #79a0e0;
   opacity: 0.8;
@@ -171,7 +183,7 @@ ul {
 .homeList {
   position: absolute;
   left: 2%;
-  top: 50%;
+  top: 70%;
 }
 
 h5 {

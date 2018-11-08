@@ -12,7 +12,7 @@ class Register extends Component{
   }
   handleSubmit = async (e) => {
     e.preventDefault();
-const registerResponse = await fetch('http://localhost:9000/auth/register', {
+const registerResponse = await fetch('http://localhost:9000/auth', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(this.state),
@@ -35,6 +35,11 @@ const registerResponse = await fetch('http://localhost:9000/auth/register', {
     this.setState({[e.target.name]:e.target.value});
   }
   render() {
+    const welcomeStyle = {
+      color: 'black',
+      'font-size': '2em',
+      'font-family': 'Montserrat'
+    }
     console.log('this is the props for register',this.props);
 
     const style={
@@ -57,7 +62,7 @@ const registerResponse = await fetch('http://localhost:9000/auth/register', {
         <br></br>
         <br></br>
         <br></br>
-        <h3>Discover hundreds of restaurants in Austin, TX!</h3>
+        <h3 style={welcomeStyle}>Discover hundreds of restaurants in Austin, TX!</h3>
       <form onSubmit={this.handleSubmit}>
         <label className="username">
           Username:
