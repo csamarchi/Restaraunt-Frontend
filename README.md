@@ -13,13 +13,23 @@
 # Screenshots: 
 
 ![alt text](/images/welcome.png "Logo Title Text 1")
+
 ![alt text](/images/register.png "Logo Title Text 1")
+
 ![alt text](/images/login.png "Logo Title Text 1")
+
 ![alt text](/images/home.png "Logo Title Text 1")
+
 ![alt text](/images/homesearch.png "Logo Title Text 1")
+
 ![alt text](/images/detailcard.png "Logo Title Text 1")
+
 ![alt text](/images/profile.png "Logo Title Text 1")
+
 ![alt text](/images/beginning.png "Logo Title Text 1")
-![alt text](/images/wireframe.png "Logo Title Text 1")
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+![alt text](/images/wireframe.JPG "Logo Title Text 1")
 ![alt text](/images/logout.png "Logo Title Text 1")
 
