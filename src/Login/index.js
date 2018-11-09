@@ -47,7 +47,7 @@ class Login extends Component{
       'font-family': 'Montserrat'
     }
     return(
-      <div className="loginRegister">
+      <div className="welcomeBack">
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
           <Link to ="/register" className="link"> Register </Link>
@@ -59,11 +59,9 @@ class Login extends Component{
             <br></br>
             <br></br>
             <br></br>
+            <br></br>
+            <br></br>
           <h3 style={welcomeStyle}>Welcome back!</h3>
-            <br></br>
-            <br></br>
-            <br></br>
-
       <form onSubmit={this.handleSubmit}>
         <label className="username">
           Username:

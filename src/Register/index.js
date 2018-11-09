@@ -60,7 +60,10 @@ class Register extends Component{
           <br></br>
           <br></br>
           <br></br>
-        <h3 style={welcomeStyle}>Discover hundreds of restaurants in Austin, TX!</h3>
+          <br></br>
+          <br></br>
+        <h3 style={welcomeStyle}> Discover hundreds of restaurants  </h3>
+        <h3 style={welcomeStyle}> in Austin, TX!  </h3>
         <form onSubmit={this.handleSubmit}>
           <label className="username">
             Username:
@@ -72,12 +75,6 @@ class Register extends Component{
           </label>
             <input className="registerButton" type='Submit' value='Register'/>
       </form>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
     </div>
     )
   };

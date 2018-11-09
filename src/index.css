@@ -96,7 +96,7 @@ h1, h3 {
 .username {
   width: 30%;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -104,7 +104,7 @@ h1, h3 {
 .password {
   width: 30%;
   position: absolute;
-  top: 65%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -113,7 +113,7 @@ h1, h3 {
   width: 30%;
   position: absolute;
   background-color: #79a0e0;
-  top: 75%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -201,4 +201,20 @@ ul {
 h5 {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+.loginRegister{
+  position: relative;
+  margin-top: 0px;
+  height: 820px;
+  background-image: url("collage4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.welcomeBack {
+  background-color: #b3caef;
+  height: 820px;
 }

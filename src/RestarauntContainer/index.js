@@ -118,7 +118,7 @@ closeModal = (restaurantFromTheList) => {
             <br></br>
             <br></br>
             <br></br>
-          <h1 style={welcomeStyle}> Find your favorite Restaurant </h1>
+          <h1 style={welcomeStyle}> Build your GrubList </h1>
             <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         </div>
             <div className="homeBottomDiv" />
