@@ -10,6 +10,9 @@ import { Card, Image, Button, Icon, Label, Grid } from 'semantic-ui-react'
           <Card.Header>{restaurant.name}</Card.Header>
             <Image src={restaurant.featured_image} width='250px' height='150px'/>
           </Card.Content>
+            <Card.Content extra>
+              <button className="deleteButton" onClick={props.deleteRestaurant.bind(null, restaurant._id)}>Delete</button>
+            </Card.Content>
         </Card>
       )
   })

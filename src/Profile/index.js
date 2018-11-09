@@ -60,6 +60,17 @@ class Profile extends Component {
     })
   }
 
+  deleteRestaurant = async (id) => {
+      console.log(id, ' this is id');
+      const deleteRestaurantResponse = await fetch('http://localhost:9000/api/v1/restaraunt' + id, {
+          method: 'DELETE'
+        });
+      const deleteRestaurantParsed = await deleteRestaurantResponse.text();
+      this.setState({
+        restaurants: this.state.restaurants.filter((oneRestaurant) => oneRestaurant._id !== id )
+      })
+    }
+
   render() {
     const welcomeStyle = {
       color: 'black',
@@ -78,7 +89,7 @@ class Profile extends Component {
       <div className='h1'>
         <h1 style={welcomeStyle}> Your favorite Restaurants </h1>
       </div>
-        <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal} />
+        <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} deleteRestaurant={this.deleteRestaurant} openModal={this.openModal} />
       </div>
     )
   }

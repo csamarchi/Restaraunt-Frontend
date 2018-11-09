@@ -104,7 +104,7 @@ h1, h3 {
 .password {
   width: 30%;
   position: absolute;
-  top: 60%;
+  top: 59%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -113,7 +113,7 @@ h1, h3 {
   width: 30%;
   position: absolute;
   background-color: #79a0e0;
-  top: 70%;
+  top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -128,9 +128,20 @@ h1, h3 {
   transform: translate(-50%, -50%);
 }
 
+.deleteButton {
+  width: 20%;
+  position: absolute;
+  background-color: #79a0e0;
+  opacity: 0.8;
+  top: 93%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
 
 
-.logoutButton:hover, .registerButton:hover, .searchButton:hover, .addButton:hover {
+
+.logoutButton:hover, .registerButton:hover, .searchButton:hover, .addButton:hover, .deleteButton:hover {
   background-color: #4d7fd1;
   cursor: pointer;
 }
