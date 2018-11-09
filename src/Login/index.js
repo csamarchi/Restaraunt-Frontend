@@ -11,9 +11,10 @@ class Login extends Component{
       password:''
     }
   }
+
   handleSubmit = async (e) => {
     e.preventDefault();
-const loginResponse = await fetch('http://localhost:9000/auth', {
+    const loginResponse = await fetch('http://localhost:9000/auth', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(this.state),
@@ -24,21 +25,21 @@ const loginResponse = await fetch('http://localhost:9000/auth', {
 
     const parsedResponse = await loginResponse.json();
     console.log(parsedResponse, 'this is our parsed data at login');
-    if(parsedResponse.data === 'login successful'){
-      // this.props.history.push('/profile');
-      //Directs to spotify login ,then directs to profile page
-      this.props.history.push('/');
-    } else if(parsedResponse.data === 'Password incorrect'){
-      alert('Password Incorrect')
-    } else if(parsedResponse.data === 'Username incorrect'){
-      alert('Username Not Found. Please Register')
+
+      if(parsedResponse.data === 'login successful') {
+        this.props.history.push('/');
+
+      } else if(parsedResponse.data === 'Password incorrect'){
+        alert('Password Incorrect')
+      } else if(parsedResponse.data === 'Username incorrect'){
+        alert('Username Not Found. Please Register')
+      }
     }
 
-
+    handleChange = (e) => {
+      this.setState({[e.target.name]:e.target.value});
     }
-  handleChange = (e) => {
-    this.setState({[e.target.name]:e.target.value});
-  }
+
   render() {
     const welcomeStyle = {
       color: 'black',
@@ -46,23 +47,22 @@ const loginResponse = await fetch('http://localhost:9000/auth', {
       'font-family': 'Montserrat'
     }
     return(
-
       <div className="loginRegister">
-      <Header className='nav'>
-        <Link to ="/" className="link"> Home </Link>
-        <Link to ="/register" className="link"> Register </Link>
-        <Link to ="/login" className="link"> Login </Link>
-        <Link to ="/logout" className="link"> Logout </Link>
-        <Link to ="/profile" className="link"> Profile </Link>
-      </Header>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <Header className='nav'>
+          <Link to ="/" className="link"> Home </Link>
+          <Link to ="/register" className="link"> Register </Link>
+          <Link to ="/login" className="link"> Login </Link>
+          <Link to ="/logout" className="link"> Logout </Link>
+          <Link to ="/profile" className="link"> Profile </Link>
+        </Header>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           <h3 style={welcomeStyle}>Welcome back!</h3>
-        <br></br>
-        <br></br>
-        <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
 
       <form onSubmit={this.handleSubmit}>
         <label className="username">
@@ -75,13 +75,13 @@ const loginResponse = await fetch('http://localhost:9000/auth', {
         </label>
           <input className="registerButton" type='Submit' value='Login'/>
       </form>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
     </div>
     )
   };

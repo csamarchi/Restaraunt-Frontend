@@ -18,13 +18,14 @@ class RestarauntContainer extends Component {
         featured_image: '',
         currency: '',
         cuisine: '',
-        address: '',
+        user_rating: '',
         url: ''
       },
         showModal: false
     }
   }
 
+//Fetching API Data
   getRestaurants = async (searchQuery) => {
     // Where We will make our fetch call to get all the Restaurants
     const restaurants = await fetch('https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&q=' + searchQuery, {
@@ -38,6 +39,7 @@ class RestarauntContainer extends Component {
     return restaurantsParsedJSON;
   }
 
+//Search Bar Function
   getRestaurantsWithQuery = (searchQuery) => {
     this.getRestaurants(searchQuery).then((restaurants) => {
       this.setState({restaurants: restaurants.restaurants})
@@ -46,16 +48,16 @@ class RestarauntContainer extends Component {
     })
   }
 
+// getting All the Restaurants, on the intial load of the APP
   componentDidMount(){
-  // get ALl the Restaurants, on the intial load of the APP
   this.getRestaurants().then((restaurants) => {
     this.setState({restaurants: restaurants.restaurants})
   }).catch((err) => {
     console.log(err);
   })
-  /// Where you call this.getRestaurants
 }
 
+//Post to Mongo Database Function
   addRestaurant = async (restaurant, e) => {
     e.preventDefault();
     console.log(restaurant);
@@ -74,6 +76,7 @@ class RestarauntContainer extends Component {
     }
   }
 
+//Controls Modals
 openModal = (restaurantFromTheList) => {
   console.log(restaurantFromTheList, 'this is from the list');
   this.setState({
@@ -83,7 +86,6 @@ openModal = (restaurantFromTheList) => {
     }
   })
 }
-
 closeModal = (restaurantFromTheList) => {
   console.log(restaurantFromTheList, 'this is from the list');
   this.setState({
@@ -94,9 +96,8 @@ closeModal = (restaurantFromTheList) => {
   })
 }
 
-
-
   render() {
+    console.log(this.state.restaurantModal, 'Mirza')
     const welcomeStyle = {
       color: 'black',
       'font-size': '3em',
@@ -121,8 +122,8 @@ closeModal = (restaurantFromTheList) => {
             <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
         </div>
             <div className="homeBottomDiv" />
-            <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
-            <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal}/>
+              <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
+              <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal}/>
             </div>
     )
   }

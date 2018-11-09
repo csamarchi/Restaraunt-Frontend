@@ -38,6 +38,11 @@ code {
   color: white;
 }
 
+.link:hover {
+  color: black;
+}
+
+
 .nav {
   top: 0px;
   background-color: #79a0e0;
@@ -49,7 +54,7 @@ code {
 .homeDiv {
   position: relative;
   margin-top: 0px;
-  height: 500px;
+  height: 550px;
   background-image: url("canvas.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -123,10 +128,13 @@ h1, h3 {
   transform: translate(-50%, -50%);
 }
 
+
+
 .logoutButton:hover, .registerButton:hover, .searchButton:hover, .addButton:hover {
   background-color: #4d7fd1;
   cursor: pointer;
 }
+
 
 input {
   right: 100%;
@@ -148,8 +156,9 @@ input {
   right: -55px;
   width: 50px;
   height: 34px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  border: 1px solid black;
+  opacity: 0.9;
+  background: black;
   text-align: center;
   color: #fff;
   border-radius: 5px;
@@ -173,6 +182,9 @@ ul {
   padding-top: 0px;
 }
 
+.cardList:hover {
+  cursor: pointer;
+}
 
 .profileList {
   position: absolute;

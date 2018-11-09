@@ -12,10 +12,9 @@ class SearchBar extends Component {
   }
 
   handleSubmit = (e) => {
-   e.preventDefault();
-   this.props.getRestaurantsWithQuery(this.state.searchQuery);
+    e.preventDefault();
+    this.props.getRestaurantsWithQuery(this.state.searchQuery);
  }
-
  handleChange = (e) => {
    this.setState({[e.currentTarget.name]: e.currentTarget.value});
  }

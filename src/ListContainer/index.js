@@ -3,13 +3,12 @@ import { Button, Card, Image, Icon, Label } from 'semantic-ui-react';
 import DetailCard from '../DetailCard';
 
 
-
   const ListContainer = (props) => {
     const restarauntList = props.restaurants.map((restaurant, i) => {
       console.log(restaurant.restaurant.name);
       console.log(props, restaurant, restaurant.restaurant.id, ' hello');
       return (
-          <Card key={restaurant.restaurant.id}>
+          <Card className="cardList" key={restaurant.restaurant.id}>
             <Card.Content>
               <Card.Header onClick={props.openModal.bind(null, restaurant.restaurant)}>{restaurant.restaurant.name}</Card.Header>
               <button className='addButton' onClick={props.addRestaurant.bind(null, restaurant.restaurant)}>Add </button>
@@ -22,13 +21,12 @@ import DetailCard from '../DetailCard';
 
     return(
       <div>
-      <Card.Group className='homeList'>
-      {restarauntList}
-      </Card.Group>
+        <Card.Group className='homeList'>
+        {restarauntList}
+        </Card.Group>
       </div>
     )
   }
-
 
 
   export default ListContainer;

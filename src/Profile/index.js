@@ -12,14 +12,16 @@ class Profile extends Component {
       restaurants: [],
       restaurantModal: {
         name: '',
-        featured_image: ''
+        featured_image: '',
+        currency: '',
+        location: ''
       },
         showModal: false
     }
   }
 
+//Fetching Data from POST
   getRestaurants = async () => {
-    // Where We will make our fetch call to get all the Restaurants
     const restaurants = await fetch('http://localhost:9000/api/v1/restaraunt', {
             method: 'GET',
             headers: {
@@ -31,34 +33,32 @@ class Profile extends Component {
   }
 
   componentDidMount(){
-  // get ALl the Restaurants, on the intial load of the APP
-  this.getRestaurants().then((restaurants) => {
-    this.setState({restaurants: restaurants.data})
-  }).catch((err) => {
-    console.log(err);
-  })
-  /// Where you call this.getRestaurants
-}
+    this.getRestaurants().then((restaurants) => {
+      this.setState({restaurants: restaurants.data})
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
 
-openModal = (restaurantFromTheList) => {
-  console.log(restaurantFromTheList, 'this is from the list');
-  this.setState({
-    showModal: true,
-    restaurantModal: {
-      ...restaurantFromTheList
-    }
-  })
-}
-
-closeModal = (restaurantFromTheList) => {
-  console.log(restaurantFromTheList, 'this is from the list');
-  this.setState({
-    showModal: false,
-    restaurantModal: {
-      ...restaurantFromTheList
-    }
-  })
-}
+//Handles Modals
+  openModal = (restaurantFromTheList) => {
+    console.log(restaurantFromTheList, 'this is from the list');
+    this.setState({
+      showModal: true,
+      restaurantModal: {
+        ...restaurantFromTheList
+      }
+    })
+  }
+  closeModal = (restaurantFromTheList) => {
+    console.log(restaurantFromTheList, 'this is from the list');
+    this.setState({
+      showModal: false,
+      restaurantModal: {
+        ...restaurantFromTheList
+      }
+    })
+  }
 
   render() {
     const welcomeStyle = {
@@ -68,18 +68,17 @@ closeModal = (restaurantFromTheList) => {
     }
     return (
       <div className="profileDiv">
-      <Header className='nav'>
-        <Link to ="/" className="link"> Home </Link>
-        <Link to ="/register" className="link"> Register </Link>
-        <Link to ="/login" className="link"> Login </Link>
-        <Link to ="/logout" className="link"> Logout </Link>
-        <Link to ="/profile" className="link"> Profile </Link>
-      </Header>
+        <Header className='nav'>
+          <Link to ="/" className="link"> Home </Link>
+          <Link to ="/register" className="link"> Register </Link>
+          <Link to ="/login" className="link"> Login </Link>
+          <Link to ="/logout" className="link"> Logout </Link>
+          <Link to ="/profile" className="link"> Profile </Link>
+        </Header>
       <div className='h1'>
         <h1 style={welcomeStyle}> Your favorite Restaurants </h1>
       </div>
-          <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal} />
-          <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal} />
+        <ProfileListContainer restaurants = {this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal} />
       </div>
     )
   }

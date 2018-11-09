@@ -13,37 +13,34 @@ class Logout extends Component{
   }
   handleClick = async (e) => {
     e.preventDefault();
-const logoutResponse = await fetch('http://localhost:9000/auth/logout');
+    const logoutResponse = await fetch('http://localhost:9000/auth/logout');
+      const parsedResponse = await logoutResponse.json();
 
-    const parsedResponse = await logoutResponse.json();
-
-    console.log(parsedResponse);
-    console.log(this.props,'this is props on handleClick');
     if(parsedResponse.data === 'Logout successful'){
       this.props.history.push('/Welcome');
       console.log('this is something');
      }
     }
-  render() {
-    const welcomeStyle = {
-      color: 'black',
-      'font-size': '2em',
-      'font-family': 'Montserrat'
-    }
-    console.log(this.props, 'Logout Props?????')
+
+    render() {
+      const welcomeStyle = {
+        color: 'black',
+        'font-size': '2em',
+        'font-family': 'Montserrat'
+      }
     return(
       <div className="logout">
-      <Header className='nav'>
-        <Link to ="/" className="link"> Home </Link>
-        <Link to ="" className="link"> Register </Link>
-        <Link to ="/login" className="link"> Login </Link>
-        <Link to ="" className="link"> Logout </Link>
-        <Link to ="/profile" className="link"> Profile </Link>
-      </Header>
-        <br></br>
+        <Header className='nav'>
+          <Link to ="/" className="link"> Home </Link>
+          <Link to ="/register" className="link"> Register </Link>
+          <Link to ="/login" className="link"> Login </Link>
+          <Link to ="/logout" className="link"> Logout </Link>
+          <Link to ="/profile" className="link"> Profile </Link>
+        </Header>
+          <br></br>
         <h2 style={welcomeStyle}>See you soon!</h2>
           <input className="logoutButton" type='Submit' value='Logout' onClick={this.handleClick} />
-     </div>
+      </div>
     )
   };
 }
