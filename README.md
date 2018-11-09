@@ -31,5 +31,15 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 ![alt text](/images/wireframe.JPG "Logo Title Text 1")
+
+# API 
+My fetch calls to the Zomato API which pulls down only Austin, TX specific restaurants. The API only allows to show 20 at a time even though many more our found in the call. I make another fetch call to my local Express API (my Mongodb Database) which happens in my main container which is my RestaurantContainer for adding a restaurant to the user's profile page. I also fetched calls in my login and register, as well as logout the user by id using req.sessions
+
+
+# MVP Overview
+* A Fullstack application, built using Node, Express, and Mongoose, that serves JSON.
+* Front-end React code that updates the UI and makes requests to the API.
+* Use a third Party API
+
 ![alt text](/images/logout.png "Logo Title Text 1")
 
