@@ -43,3 +43,16 @@ My fetch calls to the Zomato API which pulls down only Austin, TX specific resta
 
 ![alt text](/images/logout.png "Logo Title Text 1")
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+## Install
+
+* Run `npm install` within the project directory
+* Run `npm start` for dev
+
+* Download Backend Restaurant Repo from https://github.com/csamarchi/Restaraunt-Backend
+* Run `npm install`
+* Run `nodemon` for dev
+
+* Open third terminal and run `mongo`
+
