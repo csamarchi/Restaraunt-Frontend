@@ -29,6 +29,7 @@ class Profile extends Component {
             }
           });
     const restaurantsParsedJSON = await restaurants.json();
+    console.log(restaurantsParsedJSON, "chrisine");
     return restaurantsParsedJSON;
   }
 
@@ -60,12 +61,14 @@ class Profile extends Component {
     })
   }
 
+//Delete Function
   deleteRestaurant = async (id) => {
       console.log(id, ' this is id');
-      const deleteRestaurantResponse = await fetch('http://localhost:9000/api/v1/restaraunt' + id, {
+      const deleteRestaurantResponse = await fetch('http://localhost:9000/api/v1/restaraunt/' + id, {
           method: 'DELETE'
         });
       const deleteRestaurantParsed = await deleteRestaurantResponse.text();
+      console.log(deleteRestaurantParsed, 'mirza')
       this.setState({
         restaurants: this.state.restaurants.filter((oneRestaurant) => oneRestaurant._id !== id )
       })

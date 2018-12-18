@@ -193,10 +193,6 @@ ul {
   padding-top: 0px;
 }
 
-.cardList:hover {
-  cursor: pointer;
-}
-
 .profileList {
   position: absolute;
   left: 2%;
