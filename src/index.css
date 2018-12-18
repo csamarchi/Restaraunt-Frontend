@@ -72,12 +72,7 @@ code {
   text-align: center;
 }
 
-.homeBottomDiv {
-  background-color: #79a0e0;
-  opacity: 0.7;
-  height: 2500px;
-  position: relative;
-}
+
 
 h1, h3 {
   text-align: center;
@@ -129,23 +124,22 @@ h1, h3 {
 }
 
 .deleteButton {
-  width: 20%;
+  width: 80px;
+  height: 30px;
+  border-radius: 10em;
   position: absolute;
   background-color: #79a0e0;
   opacity: 0.8;
-  top: 93%;
-  left: 14%;
+  top: 92%;
+  left: 16%;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-
-
 
 .logoutButton:hover, .registerButton:hover, .searchButton:hover, .addButton:hover, .deleteButton:hover {
   background-color: #4d7fd1;
   cursor: pointer;
 }
-
 
 input {
   right: 100%;
@@ -177,14 +171,6 @@ input {
   font-size: 20px;
 }
 
-.addButton {
-  position: relative;
-  width: 100px;
-  height: 28px;
-  top: -1px;
-  right: -176px;
-}
-
 ul {
   text-align: center;
   position: absolute;
@@ -199,11 +185,6 @@ ul {
   top: 20%;
 }
 
-.homeList {
-  position: absolute;
-  left: 2%;
-  top: 70%;
-}
 
 h5 {
   text-align: center;

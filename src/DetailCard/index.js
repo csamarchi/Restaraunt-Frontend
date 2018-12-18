@@ -11,7 +11,7 @@ const DetailCard = (props) => (
         <Modal.Description>
           Cuisine: {props.restaurant.cuisines}<br/>
           Pricerange: {props.restaurant.currency}<br/>
-          Website:  {props.restaurant.url}<br/>
+          Website: {props.restaurant.url} <br/>
           Average Cost for two: ${props.restaurant.average_cost_for_two}
         </Modal.Description>
       </Modal.Content>

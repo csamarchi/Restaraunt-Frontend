@@ -1,0 +1,27 @@
+.cardList {
+  padding-left: 20px;
+  padding-right: 60px;
+  border: 1px solid;
+  margin: 5px;
+  background-color: #79a0e0;
+}
+
+.searchImage:hover, h3:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.homeList {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.addButton {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  left: 333px;
+  bottom: 50px;
+}
