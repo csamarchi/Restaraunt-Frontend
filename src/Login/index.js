@@ -14,7 +14,7 @@ class Login extends Component{
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const loginResponse = await fetch('http://localhost:9000/auth', {
+    const loginResponse = await fetch('http://localhost:9000/auth/login', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(this.state),
@@ -29,9 +29,9 @@ class Login extends Component{
       if(parsedResponse.data === 'login successful') {
         this.props.history.push('/');
 
-      } else if(parsedResponse.data === 'Password incorrect'){
+      } else if(parsedResponse.data === 'login unsuccessful'){
         alert('Password Incorrect')
-      } else if(parsedResponse.data === 'Username incorrect'){
+      } else if(parsedResponse.data === 'login unsuccessful'){
         alert('Username Not Found. Please Register')
       }
     }

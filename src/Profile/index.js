@@ -22,12 +22,7 @@ class Profile extends Component {
 
 //Fetching Data from POST
   getRestaurants = async () => {
-    const restaurants = await fetch('http://localhost:9000/api/v1/restaraunt', {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            }
-          });
+    const restaurants = await fetch('http://localhost:9000/api/v1/restaraunt')
     const restaurantsParsedJSON = await restaurants.json();
     console.log(restaurantsParsedJSON, "chrisine");
     return restaurantsParsedJSON;
