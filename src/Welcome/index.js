@@ -4,19 +4,19 @@ import { Header } from 'semantic-ui-react';
 
 
 class Welcome extends Component {
-  constructor() {
-    super();
-  }
+
   render() {
     const welcomeStyle = {
       color: 'black',
-      'font-size': '4em',
-      'font-family': 'Montserrat'
+      fontSize: '4em',
+      fontFamily: 'Montserrat'
     }
+
     const style = {
       color: 'black',
-      'font-family': 'Montserrat'
+      fontFamily: 'Montserrat'
     }
+
     return (
       <div className='welcome'>
         <Header className='nav'>
@@ -33,8 +33,8 @@ class Welcome extends Component {
             <br></br>
             <br></br>
           <h1 style={welcomeStyle}> Welcome! </h1>
-          <Link className= "a" style={style} to ="/login" className="link"> Sign in </Link>
-          <Link className= "a" style={style} to ="/register" className="link"> Register </Link>
+          <Link style={style} to ="/login" className="link"> Sign in </Link>
+          <Link style={style} to ="/register" className="link"> Register </Link>
       </div>
     )
   }

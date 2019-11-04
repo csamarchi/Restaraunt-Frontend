@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { Link }from 'react-router-dom';
 import ProfileListContainer from '../ProfileListContainer';
-import { Header, Grid } from 'semantic-ui-react'
-import DetailCard from '../DetailCard';
+import { Header } from 'semantic-ui-react'
 
 
 class Profile extends Component {
@@ -72,8 +71,8 @@ class Profile extends Component {
   render() {
     const welcomeStyle = {
       color: 'black',
-      'font-size': '2em',
-      'font-family': 'Montserrat'
+      fontSize: '2em',
+      fontFamily: 'Montserrat'
     }
     return (
       <div className="profileDiv">

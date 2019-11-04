@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
-import { Card, Image, Button, Icon, Label, Grid } from 'semantic-ui-react'
+import React from 'react';
+import { Card, Image } from 'semantic-ui-react'
 
   const ProfileListContainer = (props) => {
     const profileList = props.restaurants.map((restaurant, i) => {
-      console.log(restaurant.name);
       return (
         <Card key={restaurant._id}>
           <Card.Content>

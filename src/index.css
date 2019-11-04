@@ -84,7 +84,7 @@ h1, h3 {
 .SearchBar {
  width: 30%;
  position: absolute;
- top: 75%;
+ top: 40%;
  left: 50%;
  transform: translate(-50%, -50%);
 }

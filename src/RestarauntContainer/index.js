@@ -4,8 +4,6 @@ import ListContainer from '../ListContainer';
 import { Link }from 'react-router-dom';
 import { Header } from 'semantic-ui-react'
 import DetailCard from '../DetailCard';
-import ProfileListContainer from '../ProfileListContainer';
-import { Grid } from 'semantic-ui-react';
 
 class RestarauntContainer extends Component {
   constructor() {
@@ -21,13 +19,12 @@ class RestarauntContainer extends Component {
         user_rating: '',
         url: ''
       },
-        showModal: false
+      showModal: false
     }
   }
 
 //Fetching API Data
   getRestaurants = async (searchQuery) => {
-    // Where We will make our fetch call to get all the Restaurants
     const restaurants = await fetch('https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&q=' + searchQuery, {
             method: 'GET',
             headers: {
@@ -60,7 +57,7 @@ class RestarauntContainer extends Component {
 //Post to Mongo Database Function
   addRestaurant = async (restaurant, e) => {
     e.preventDefault();
-    console.log(restaurant);
+    //console.log(restaurant);
     try {
       const addedRestaurant = await fetch('http://localhost:9000/api/v1/restaraunt', {
         method: 'POST',
@@ -71,14 +68,12 @@ class RestarauntContainer extends Component {
         }
       });
     } catch(err){
-      console.log('error')
       console.log(err)
     }
   }
 
 //Controls Modals
 openModal = (restaurantFromTheList) => {
-  console.log(restaurantFromTheList, 'this is from the list');
   this.setState({
     showModal: true,
     restaurantModal: {
@@ -87,7 +82,6 @@ openModal = (restaurantFromTheList) => {
   })
 }
 closeModal = (restaurantFromTheList) => {
-  console.log(restaurantFromTheList, 'this is from the list');
   this.setState({
     showModal: false,
     restaurantModal: {
@@ -97,34 +91,31 @@ closeModal = (restaurantFromTheList) => {
 }
 
   render() {
-    console.log(this.state.restaurantModal, 'Mirza')
+    //console.log(this.state.restaurantModal, 'Christine')
+    let backgroundHeight = window.innerHeight;
+
     const welcomeStyle = {
       color: 'black',
-      'font-size': '3em',
-      'font-family': 'Montserrat'
+      fontSize: '3em',
+      fontFamily: 'Montserrat'
     }
-    console.log(this.state, ' this is state');
+
     return(
      <div>
-        <div className="homeDiv">
-          <Header className='nav'>
-            <Link to ="/welcome" className="link"> Home </Link>
-            <Link to ="/register" className="link"> Register </Link>
-            <Link to ="/login" className="link"> Login </Link>
-            <Link to ="/logout" className="link"> Logout </Link>
-            <Link to ="/profile" className="link"> Profile </Link>
-          </Header>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-          <h1 style={welcomeStyle}> Build your GrubList </h1>
-            <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
-        </div>
-            <div className="homeBottomDiv" />
-              <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
-              <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal}/>
-            </div>
+      <div className="homeDiv" style={{ height: backgroundHeight}}>
+        <Header className='nav'>
+          <Link to ="/welcome" className="link"> Home </Link>
+          <Link to ="/register" className="link"> Register </Link>
+          <Link to ="/login" className="link"> Login </Link>
+          <Link to ="/logout" className="link"> Logout </Link>
+          <Link to ="/profile" className="link"> Profile </Link>
+        </Header>
+        <h1 style={welcomeStyle}> Build your GrubList </h1>
+        <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
+      </div>
+        <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
+        <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal}/>
+    </div>
     )
   }
 }

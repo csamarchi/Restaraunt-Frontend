@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom';
 import { Link }from 'react-router-dom';
 import { Header } from 'semantic-ui-react'
 
@@ -43,8 +42,8 @@ class Login extends Component{
   render() {
     const welcomeStyle = {
       color: 'black',
-      'font-size': '3em',
-      'font-family': 'Montserrat'
+      fontSize: '3em',
+      fontFamily: 'Montserrat'
     }
     return(
       <div className="welcomeBack">
@@ -71,7 +70,7 @@ class Login extends Component{
           Password:
           <input type='password' name='password' placeholder='password' onChange={this.handleChange}/>
         </label>
-          <input className="registerButton" type='Submit' value='Login'/>
+          <input className="registerButton" type='Submit' />
       </form>
             <br></br>
             <br></br>

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import RestarauntContainer from './RestarauntContainer';
-import { Route, Link, Switch } from 'react-router-dom';
-import * as serviceWorker from './serviceWorker';
+import { Route, Switch } from 'react-router-dom';
+// import * as serviceWorker from './serviceWorker';
 import Profile from './Profile';
 import Welcome from './Welcome';
 import Login from './Login';

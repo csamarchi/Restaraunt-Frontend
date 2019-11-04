@@ -22,7 +22,7 @@ class Register extends Component{
         }
     });
     const parsedResponse = await registerResponse.json();
-      if(parsedResponse.data = 'register successful'){
+      if ((parsedResponse.data = 'register successful')){
         // this.props.history.push('/profile');
         //window.location.assign('http://localhost:3000')
         this.props.history.push('/')
@@ -37,15 +37,8 @@ class Register extends Component{
   render() {
     const welcomeStyle = {
       color: 'black',
-      'font-size': '2em',
-      'font-family': 'Montserrat'
-    }
-
-    const style={
-      width: '200px',
-      height: '200px',
-      borderRadius: '50%',
-      marginBottom: '50px',
+      fontSize: '2em',
+      fontFamily: 'Montserrat'
     }
 
     return(
@@ -74,8 +67,8 @@ class Register extends Component{
             Password:
             <input type='password' name='password' placeholder='password' onChange={this.handleChange}/>
           </label>
-            <input className="registerButton" type='Submit' value='Register'/>
-      </form>
+            <input className="registerButton" type='Submit' />
+        </form>
     </div>
     )
   };

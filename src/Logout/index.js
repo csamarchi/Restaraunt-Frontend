@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Login from '../Login';
+// import Login from '../Login';
 import { Link }from 'react-router-dom';
 import { Header } from 'semantic-ui-react'
 
@@ -25,8 +25,8 @@ class Logout extends Component{
     render() {
       const welcomeStyle = {
         color: 'black',
-        'font-size': '2em',
-        'font-family': 'Montserrat'
+        fontSize: '2em',
+        fontFamily: 'Montserrat'
       }
     return(
       <div className="logout">
@@ -39,7 +39,7 @@ class Logout extends Component{
         </Header>
           <br></br>
         <h2 style={welcomeStyle}>See you soon!</h2>
-          <input className="logoutButton" type='Submit' value='Logout' onClick={this.handleClick} />
+          <input className="logoutButton" type='Submit' onClick={this.handleClick} />
       </div>
     )
   };
