@@ -41,8 +41,10 @@ class Register extends Component{
       fontFamily: 'Montserrat'
     }
 
+    let backgroundHeight = window.innerHeight;
+
     return(
-      <div className="loginRegister">
+      <div className="loginRegister" style={{ height: backgroundHeight }}>
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
           <Link to ="/register" className="link"> Register </Link>

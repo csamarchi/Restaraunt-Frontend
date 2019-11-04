@@ -23,13 +23,16 @@ class Logout extends Component{
     }
 
     render() {
+      let backgroundHeight = window.innerHeight;
+
       const welcomeStyle = {
         color: 'black',
         fontSize: '2em',
         fontFamily: 'Montserrat'
       }
+
     return(
-      <div className="logout">
+      <div className="logout" style={{ height: backgroundHeight }}>
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
           <Link to ="/register" className="link"> Register </Link>

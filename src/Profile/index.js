@@ -81,6 +81,7 @@ class Profile extends Component {
 
   render() {
     console.log(this.props.history);
+    let backgroundHeight = window.innerHeight;
 
     const welcomeStyle = {
       color: 'black',
@@ -88,7 +89,7 @@ class Profile extends Component {
       fontFamily: 'Montserrat'
     }
     return (
-      <div className="profileDiv">
+      <div className="profileDiv" style={{ height: backgroundHeight }}>
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
           <Link to ="/register" className="link"> Register </Link>

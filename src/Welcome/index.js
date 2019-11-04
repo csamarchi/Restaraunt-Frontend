@@ -6,6 +6,8 @@ import { Header } from 'semantic-ui-react';
 class Welcome extends Component {
 
   render() {
+    let backgroundHeight = window.innerHeight;
+
     const welcomeStyle = {
       color: 'black',
       fontSize: '4em',
@@ -18,7 +20,7 @@ class Welcome extends Component {
     }
 
     return (
-      <div className='welcome'>
+      <div className='welcome' style={{ height: backgroundHeight }}>
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
           <Link to ="/register" className="link"> Register </Link>

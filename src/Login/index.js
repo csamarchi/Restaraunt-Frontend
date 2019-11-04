@@ -45,8 +45,11 @@ class Login extends Component{
       fontSize: '3em',
       fontFamily: 'Montserrat'
     }
+
+    let backgroundHeight = window.innerHeight;
+
     return(
-      <div className="welcomeBack">
+      <div className="welcomeBack" style={{ height: backgroundHeight }}>
         <Header className='nav'>
           <Link to ="/" className="link"> Home </Link>
           <Link to ="/register" className="link"> Register </Link>
