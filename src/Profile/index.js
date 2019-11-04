@@ -21,10 +21,20 @@ class Profile extends Component {
 
 //Fetching Data from POST
   getRestaurants = async () => {
-    const restaurants = await fetch('http://localhost:9000/api/v1/restaraunt')
+    const restaurants = await fetch('http://localhost:9000/api/v1/restaraunt', {
+      method: 'GET',
+      credentials: 'include',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
     const restaurantsParsedJSON = await restaurants.json();
     console.log(restaurantsParsedJSON, "chrisine");
-    return restaurantsParsedJSON;
+    if (restaurantsParsedJSON.data !== 'unsuccessful') {
+      return restaurantsParsedJSON;
+    } else {
+      this.props.history.push('/welcome');
+    }
   }
 
   componentDidMount(){
@@ -45,6 +55,7 @@ class Profile extends Component {
       }
     })
   }
+
   closeModal = (restaurantFromTheList) => {
     console.log(restaurantFromTheList, 'this is from the list');
     this.setState({
@@ -69,6 +80,8 @@ class Profile extends Component {
     }
 
   render() {
+    console.log(this.props.history);
+
     const welcomeStyle = {
       color: 'black',
       fontSize: '2em',

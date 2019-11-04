@@ -26,7 +26,7 @@ import Register from './Register';
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/register" component={Register} />
           </Switch>
-          </div>
+      </div>
     )
 }
 

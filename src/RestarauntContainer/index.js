@@ -8,7 +8,6 @@ import DetailCard from '../DetailCard';
 class RestarauntContainer extends Component {
   constructor() {
     super();
-
     this.state = {
       restaurants: [],
       restaurantModal: {
@@ -23,15 +22,27 @@ class RestarauntContainer extends Component {
     }
   }
 
+//Check if Logged in
+  isLoggedIn = async () => {
+    const loggedIn = await fetch('http://localhost:9000/auth/user', {
+      method: 'GET',
+      credentials: 'include',
+    })
+    const loggedInJson = await loggedIn.json();
+    if (loggedInJson.data === false) {
+      this.props.history.push('/welcome');
+    }
+  }
+
 //Fetching API Data
   getRestaurants = async (searchQuery) => {
     const restaurants = await fetch('https://developers.zomato.com/api/v2.1/search?entity_id=278&entity_type=city&q=' + searchQuery, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              'user-key': "95f432cefc027eaa7c0c7881e0edd2e7"
-            }
-          });
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'user-key': "95f432cefc027eaa7c0c7881e0edd2e7"
+        }
+      });
     const restaurantsParsedJSON = await restaurants.json();
     return restaurantsParsedJSON;
   }
@@ -47,11 +58,12 @@ class RestarauntContainer extends Component {
 
 // getting All the Restaurants, on the intial load of the APP
   componentDidMount(){
-  this.getRestaurants().then((restaurants) => {
-    this.setState({restaurants: restaurants.restaurants})
-  }).catch((err) => {
-    console.log(err);
-  })
+    this.isLoggedIn();
+    this.getRestaurants().then((restaurants) => {
+      this.setState({restaurants: restaurants.restaurants})
+    }).catch((err) => {
+      console.log(err);
+    })
 }
 
 //Post to Mongo Database Function
@@ -111,7 +123,7 @@ closeModal = (restaurantFromTheList) => {
           <Link to ="/profile" className="link"> Profile </Link>
         </Header>
         <h1 style={welcomeStyle}> Build your GrubList </h1>
-        <SearchBar getRestaurantsWithQuery = {this.getRestaurantsWithQuery} />
+        <SearchBar getRestaurantsWithQuery={this.getRestaurantsWithQuery} />
       </div>
         <ListContainer restaurants={this.state.restaurants} addRestaurant={this.addRestaurant} openModal={this.openModal}/>
         <DetailCard showModal={this.state.showModal} closeModal={this.closeModal} restaurant={this.state.restaurantModal}/>
