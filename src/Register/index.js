@@ -13,7 +13,7 @@ class Register extends Component{
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const registerResponse = await fetch('http://localhost:9000/auth/register', {
+    const registerResponse = await fetch('https://safe-citadel-55503.herokuapp.com/auth/register', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(this.state),

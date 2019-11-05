@@ -13,7 +13,7 @@ class Login extends Component{
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const loginResponse = await fetch('http://localhost:9000/auth/login', {
+    const loginResponse = await fetch('https://safe-citadel-55503.herokuapp.com/auth/login', {
       method: 'POST',
       credentials: 'include',
       body: JSON.stringify(this.state),

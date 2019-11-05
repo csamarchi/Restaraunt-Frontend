@@ -13,7 +13,7 @@ class Logout extends Component{
   }
   handleClick = async (e) => {
     e.preventDefault();
-    const logoutResponse = await fetch('http://localhost:9000/auth/logout');
+    const logoutResponse = await fetch('https://safe-citadel-55503.herokuapp.com/auth/logout');
       const parsedResponse = await logoutResponse.json();
 
     if(parsedResponse.data === 'Logout successful'){

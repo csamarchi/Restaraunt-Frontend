@@ -21,7 +21,7 @@ class Profile extends Component {
 
 //Fetching Data from POST
   getRestaurants = async () => {
-    const restaurants = await fetch('http://localhost:9000/api/v1/restaraunt', {
+    const restaurants = await fetch('https://safe-citadel-55503.herokuapp.com/api/v1/restaraunt', {
       method: 'GET',
       credentials: 'include',
       headers:{
@@ -69,7 +69,7 @@ class Profile extends Component {
 //Delete Function
   deleteRestaurant = async (id) => {
       console.log(id, ' this is id');
-      const deleteRestaurantResponse = await fetch('http://localhost:9000/api/v1/restaraunt/' + id, {
+      const deleteRestaurantResponse = await fetch('https://safe-citadel-55503.herokuapp.com/api/v1/restaraunt/' + id, {
           method: 'DELETE'
         });
       const deleteRestaurantParsed = await deleteRestaurantResponse.text();

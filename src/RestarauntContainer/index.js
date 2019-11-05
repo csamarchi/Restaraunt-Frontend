@@ -24,7 +24,7 @@ class RestarauntContainer extends Component {
 
 //Check if Logged in
   isLoggedIn = async () => {
-    const loggedIn = await fetch('http://localhost:9000/auth/user', {
+    const loggedIn = await fetch('https://safe-citadel-55503.herokuapp.com/auth/user', {
       method: 'GET',
       credentials: 'include',
     })
@@ -71,7 +71,7 @@ class RestarauntContainer extends Component {
     e.preventDefault();
     //console.log(restaurant);
     try {
-      const addedRestaurant = await fetch('http://localhost:9000/api/v1/restaraunt', {
+      const addedRestaurant = await fetch('https://safe-citadel-55503.herokuapp.com/api/v1/restaraunt', {
         method: 'POST',
         credentials: 'include',
         body: JSON.stringify(restaurant),
