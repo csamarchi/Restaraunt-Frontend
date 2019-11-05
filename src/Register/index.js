@@ -52,25 +52,21 @@ class Register extends Component{
           <Link to ="/logout" className="link"> Logout </Link>
           <Link to ="/profile" className="link"> Profile </Link>
         </Header>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-        <h3 style={welcomeStyle}> Discover hundreds of restaurants  </h3>
-        <h3 style={welcomeStyle}> in Austin, TX!  </h3>
-        <form onSubmit={this.handleSubmit}>
-          <label className="username">
-            Username:
-            <input type='text' name='username' placeholder='username' onChange={this.handleChange}/>
-          </label>
-          <label className="password">
-            Password:
-            <input type='password' name='password' placeholder='password' onChange={this.handleChange}/>
-          </label>
-            <input className="registerButton" type='Submit' />
-        </form>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          <h3 style={welcomeStyle}> Discover hundreds of restaurants  </h3>
+          <h3 style={welcomeStyle}> in Austin, TX!  </h3>
+          <form onSubmit={this.handleSubmit}>
+            <label className="username">
+              Username:
+              <input type='text' name='username' placeholder='username' onChange={this.handleChange}/>
+            </label>
+            <label className="password">
+              Password:
+              <input type='password' name='password' placeholder='password' onChange={this.handleChange}/>
+            </label>
+              <input className="registerButton" type='Submit' />
+          </form>
+        </div>
     </div>
     )
   };

@@ -13,7 +13,13 @@ class Logout extends Component{
   }
   handleClick = async (e) => {
     e.preventDefault();
-    const logoutResponse = await fetch('https://safe-citadel-55503.herokuapp.com/auth/logout');
+    const logoutResponse = await fetch('https://safe-citadel-55503.herokuapp.com/auth/logout', {
+      method: 'GET',
+      credentials: 'include',
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    });
       const parsedResponse = await logoutResponse.json();
 
     if(parsedResponse.data === 'Logout successful'){
