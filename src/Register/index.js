@@ -52,7 +52,7 @@ class Register extends Component{
           <Link to ="/logout" className="link"> Logout </Link>
           <Link to ="/profile" className="link"> Profile </Link>
         </Header>
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div style={{display: 'flex', flexDirection: 'column', marginTop: '25vh'}}>
           <h3 style={welcomeStyle}> Discover hundreds of restaurants  </h3>
           <h3 style={welcomeStyle}> in Austin, TX!  </h3>
           <form onSubmit={this.handleSubmit}>
